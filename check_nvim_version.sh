@@ -1,10 +1,13 @@
 #!/bin/bash
 
+# customizable vars
+REPO="https://github.com/neovim/neovim"
+
 TARGET=$1
 case $TARGET in
 	nvim)
 		# TODO: Keyword is Latest, REPO is the repo link
-		RELEASE=$(gh release list --repo https://github.com/neovim/neovim | grep -m1 Latest | head -1 | grep -oP -m1 "v\d.*\s" | cut -f1)
+		RELEASE=$(gh release list --repo "$REPO" | grep -m1 Latest | head -1 | grep -oP -m1 "v\d.*\s" | cut -f1)
 		CURRENT=$(nvim --version | head -1 | grep -oP "v\d.*")
 		if [ "$RELEASE" != "$CURRENT" ]; then
 			echo "nvim is out of date!"

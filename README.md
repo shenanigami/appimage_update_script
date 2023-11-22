@@ -3,4 +3,6 @@ For now, this script updates neovim, assuming your neovim app image is named `nv
 
 For now this script is neovim specific, but in the future may apply to other apps that don't have automatic updates for their app images.
 
-Dependency: gh cli
+Dependencies: gh cli, jansson lib
+
+Status: work in progress
